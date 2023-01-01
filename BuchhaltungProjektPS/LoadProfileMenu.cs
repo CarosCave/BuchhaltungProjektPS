@@ -71,9 +71,7 @@ public class LoadProfileMenu : Menu
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("FEHLER: Ungültiges Profil");
-                Console.ForegroundColor = ConsoleColor.White;
+                Error.Message("Profil");
             }
 
         }

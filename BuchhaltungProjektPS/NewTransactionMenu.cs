@@ -49,9 +49,7 @@ public class NewTransactionMenu : Menu
             {
                 correctInput = false;
                 
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("FEHLER: Ungültiger Geldbetrag");
-                Console.ForegroundColor = ConsoleColor.White;
+                Error.Message("Betrag");
             }
 
             if (correctInput)
@@ -74,9 +72,7 @@ public class NewTransactionMenu : Menu
             if (!DateTime.TryParseExact(Console.ReadLine(), "dd.MM.YYYY", null, System.Globalization.DateTimeStyles.None, out input))
             {
                 correctInput = false;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("FEHLER: Ungültiges Datum");
-                Console.ForegroundColor = ConsoleColor.White;
+                Error.Message("Datum");
             }
 
             if (correctInput)

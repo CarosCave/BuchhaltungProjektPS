@@ -38,9 +38,7 @@ public class StartMenu : Menu
                 default:
                     correctInput = false;
 
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Ungültige Eingabe!");
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Error.Message("Eingabe");
                     break;
             }
 
