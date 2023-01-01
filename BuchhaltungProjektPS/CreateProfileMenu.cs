@@ -30,9 +30,7 @@ public class CreateProfileMenu : Menu
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("FEHLER: Ungültiger Name");
-                Console.ForegroundColor = ConsoleColor.White;
+                Error.Message("Name");
             }
             
         }
@@ -48,9 +46,7 @@ public class CreateProfileMenu : Menu
 
             if (!decimal.TryParse(strInput, out input))
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("FEHLER: Ungültiger Geldbetrag");
-                Console.ForegroundColor = ConsoleColor.White;
+                Error.Message("Betrag");
                 continue;
             }
 

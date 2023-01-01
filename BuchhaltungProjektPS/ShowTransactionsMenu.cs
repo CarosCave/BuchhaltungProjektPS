@@ -32,9 +32,7 @@ public class ShowTransactionsMenu : Menu
             if (!DateTime.TryParseExact(Console.ReadLine(),"dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out input))
             {
                 correctInput = false;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("FEHLER: Ungültiges Datum");
-                Console.ForegroundColor = ConsoleColor.White;
+                Error.Message("Datum");
             }
 
             if (correctInput)
@@ -58,9 +56,7 @@ public class ShowTransactionsMenu : Menu
             if (!DateTime.TryParseExact(Console.ReadLine(),"dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out input) || input < startDate)
             {
                 correctInput = false;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("FEHLER: Ungültiges Datum");
-                Console.ForegroundColor = ConsoleColor.White;
+                Error.Message("Datum");
             }
 
             if (correctInput)
