@@ -19,13 +19,12 @@ public class StartMenu : Menu
     {
         string input;
         Menu nextMenu;
+        bool correctInput = true;
 
-        while (true)
+        do
         {
             Console.Write("Eingabe: ");
             input = Console.ReadLine();
-
-            bool correctInput = true;
 
             switch (input)
             {
@@ -42,10 +41,6 @@ public class StartMenu : Menu
                     break;
             }
 
-            if (correctInput)
-            {
-                break;
-            }
-        }
+        } while (!correctInput);
     }
 }

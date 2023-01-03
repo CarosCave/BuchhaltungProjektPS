@@ -27,11 +27,9 @@ public class CreateProfileMenu : Menu
             {
                 return input;
             }
-            else
-            {
-                Error.Message("Name");
-            }
             
+            // Else ist überflüssig, da bei einer korrekten if Abfrage sowieso die Funktion beendet wird. 
+            Error.Message("Name");
         }
     }
 

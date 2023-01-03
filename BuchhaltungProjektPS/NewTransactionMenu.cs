@@ -40,46 +40,40 @@ public class NewTransactionMenu : Menu
     private decimal InputTransactionAmount()
     {
         decimal input;
-        while (true)
+        bool correctInput = true;
+        do
         {
             Console.Write("Euro-Betrag: ");
-            bool correctInput = true;
-            
+
             if (!decimal.TryParse(Console.ReadLine(), out input))
             {
                 correctInput = false;
-                
+
                 Error.Message("Betrag");
             }
 
-            if (correctInput)
-            {
-                break;
-            }
-        }
+        } while (!correctInput);
         return input;
     }
 
     private DateTime InputTransactionDate()
     {
         DateTime input;
+        bool correctInput = true;
 
-        while (true)
+        do
         {
             Console.Write("Datum (TT.MM.JJJJ): ");
-            bool correctInput = true;
 
-            if (!DateTime.TryParseExact(Console.ReadLine(), "dd.MM.YYYY", null, System.Globalization.DateTimeStyles.None, out input))
+
+            if (!DateTime.TryParseExact(Console.ReadLine(), "dd.MM.YYYY", null,
+                    System.Globalization.DateTimeStyles.None, out input))
             {
                 correctInput = false;
                 Error.Message("Datum");
             }
 
-            if (correctInput)
-            {
-                break;
-            }
-        }
+        } while (!correctInput);
 
         return input;
     }

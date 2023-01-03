@@ -23,23 +23,21 @@ public class ShowTransactionsMenu : Menu
     private DateTime InputStartDate()
     {
         DateTime input;
+        bool correctInput = true;
 
-        while (true)
+        do
         {
-            bool correctInput = true;
+
             Console.Write("Startdatum (TT.MM.JJJJ): ");
 
-            if (!DateTime.TryParseExact(Console.ReadLine(),"dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out input))
+            if (!DateTime.TryParseExact(Console.ReadLine(), "dd.MM.yyyy", null,
+                    System.Globalization.DateTimeStyles.None, out input))
             {
                 correctInput = false;
                 Error.Message("Datum");
             }
 
-            if (correctInput)
-            {
-                break;
-            }
-        }
+        } while (!correctInput);
 
         return input;
     }
@@ -47,23 +45,21 @@ public class ShowTransactionsMenu : Menu
     private DateTime InputEndDate(DateTime startDate)
     {
         DateTime input;
+        bool correctInput = true;
 
-        while (true)
+        do
         {
-            bool correctInput = true;
+
             Console.Write("Enddatum (TT.MM.JJJJ): ");
 
-            if (!DateTime.TryParseExact(Console.ReadLine(),"dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out input) || input < startDate)
+            if (!DateTime.TryParseExact(Console.ReadLine(), "dd.MM.yyyy", null,
+                    System.Globalization.DateTimeStyles.None, out input) || input < startDate)
             {
                 correctInput = false;
                 Error.Message("Datum");
             }
 
-            if (correctInput)
-            {
-                break;
-            }
-        }
+        } while (!correctInput);
 
         return input;
     }

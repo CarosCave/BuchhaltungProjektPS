@@ -19,11 +19,12 @@ public class MainMenu : Menu
     private void InputOption()
     {
         string input;
-        while (true)
+        bool correctInput = true;
+        do
         {
             Console.WriteLine("Eingabe: ");
             input = Console.ReadLine();
-            bool correctInput = true;
+
             Menu nextMenu;
 
             switch (input)
@@ -31,25 +32,20 @@ public class MainMenu : Menu
                 case "1":
                     nextMenu = new NewTransactionMenu();
                     break;
-                
+
                 case "2":
                     nextMenu = new ShowTransactionsMenu();
                     break;
-                
+
                 case "3":
                     nextMenu = new StartMenu();
                     break;
-                
+
                 default:
                     correctInput = false;
                     Error.Message("Eingabe");
                     break;
             }
-
-            if (correctInput)
-            {
-                break;
-            }
-        }
+        } while (!correctInput);
     }
 }
