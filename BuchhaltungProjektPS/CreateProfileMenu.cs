@@ -19,7 +19,6 @@ public class CreateProfileMenu : Menu
     {
         while (true)
         {
-            bool correctInput = true;
             string input = "";
             Console.Write("Profilname: ");
             input = Console.ReadLine();

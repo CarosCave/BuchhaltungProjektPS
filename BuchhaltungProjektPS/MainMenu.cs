@@ -5,7 +5,7 @@ public class MainMenu : Menu
     public override void DisplayMenu()
     {
         Console.WriteLine("Profil: " + ProfileManager.CurrentProfile.Name);
-        Console.WriteLine("Aktueller Kontostand: " + ProfileManager.CurrentProfile.Balance + "Euro");
+        Console.WriteLine("Aktueller Kontostand: " + ProfileManager.CurrentProfile.Balance + " Euro");
         Console.WriteLine("---------------------------------------");
         Console.WriteLine();
         Console.WriteLine("[1] Neue Transaktion");

@@ -29,10 +29,24 @@ public class LoadProfileMenu : Menu
     {
         string[] profileFiles = Directory.GetFiles(AppContext.BaseDirectory, "*.prof");
 
-        foreach (string file in profileFiles)
+        if (profileFiles.Length == 0)
         {
-            Console.WriteLine("- " + Path.GetFileName(file));
+            Console.Clear();
+            Console.WriteLine("Es gibt noch kein zu ladendes Profil.");
+            Console.WriteLine("Bitte legen Sie im nächsten Schritt ein neues Profil an.");
+
+            Console.ReadKey();
+
+            Menu nextMenu = new CreateProfileMenu();
         }
+        else
+        {
+            foreach (string file in profileFiles)
+            {
+                Console.WriteLine("- " + Path.GetFileName(file));
+            }
+        }
+        
     }
 
     private string InputProfileName()
